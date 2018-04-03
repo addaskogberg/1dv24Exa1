@@ -708,11 +708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\addas\\1dv024\\as224wq-examination-1\\as224wq-examination-1.csproj",
+      "projectUniqueName": "C:\\Users\\addas\\1dv024\\as224wq-examination-1\\as224wq-examination-1.csproj",
       "projectName": "as224wq-examination-1",
-      "projectPath": "c:\\Users\\addas\\1dv024\\as224wq-examination-1\\as224wq-examination-1.csproj",
+      "projectPath": "C:\\Users\\addas\\1dv024\\as224wq-examination-1\\as224wq-examination-1.csproj",
       "packagesPath": "C:\\Users\\addas\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\addas\\1dv024\\as224wq-examination-1\\obj\\",
+      "outputPath": "C:\\Users\\addas\\1dv024\\as224wq-examination-1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

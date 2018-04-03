@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace as224wq_examination_1
 {
@@ -6,7 +8,11 @@ namespace as224wq_examination_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+             var json = File.ReadAllText("data.json");
+            var data = JsonConvert.DeserializeObject<string>(json); 
+          
+            Console.WriteLine(string.Join(",", data));
         }
     }
 }
