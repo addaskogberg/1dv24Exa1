@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace as224wq_examination_1
@@ -16,6 +17,8 @@ namespace as224wq_examination_1
         Console.WriteLine("Average: " + Math.Round(averageValue, 1));
         double medianValue = Median(source);
         Console.WriteLine("Median: " + Math.Round(medianValue, 1));
+        int[] modeValues = Mode(source);
+        Console.WriteLine("Typvärdet: " + modeValues );
 
 
         return null;
@@ -46,5 +49,10 @@ namespace as224wq_examination_1
             return (medianValue[medianValue.Length / 2 - 1] + medianValue[medianValue.Length / 2]) / 2.0;
         return medianValue[medianValue.Length / 2];       
       } 
+
+      static int[] Mode(int[] source)
+      {
+       return  new int[2];
+      }
     }
 }
