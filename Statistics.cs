@@ -1,22 +1,21 @@
 using System;
+using System.Linq;
 
 namespace as224wq_examination_1
 {
-      static class Statistics
+     static class Statistics
     {
 
-      static dynamic DescriptiveStatistic(int[] source)
+      public static dynamic DescriptiveStatistic(int[] source)
       {
-        int max = Maximum(source);
-        
+        int maxValue = Maximum(source);
+        Console.WriteLine("Maximum: " + maxValue);
         return null;
       }
-       static int Maximum(int[] source)
+      static int Maximum(int[] source)
       {
-        int max = 0;
-
-        return max;
-       
+        int maxValue = source.Max();
+        return maxValue;
       }
 
       

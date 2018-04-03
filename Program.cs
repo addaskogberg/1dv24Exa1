@@ -18,8 +18,10 @@ namespace as224wq_examination_1
             {
                 source [i] = data[i];
             }
-           
-            Console.WriteLine(source.Length); 
+
+             Statistics.DescriptiveStatistic(source);
+
+           // Console.WriteLine(maxValue); 
         
 
        }
