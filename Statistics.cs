@@ -22,7 +22,7 @@ namespace as224wq_examination_1
         int rangeValue = Range(source);
         Console.WriteLine("Range: " + rangeValue);
         double StandardDeviationValue = StandardDeviation(source);
-        Console.WriteLine ("Standardavvikelse: " + StandardDeviationValue);
+        Console.WriteLine ("Standardavvikelse: " + Math.Round(StandardDeviationValue, 1));
 
 
         return null;
@@ -66,10 +66,16 @@ namespace as224wq_examination_1
         return rangeValue;
       }
 
-       static double StandardDeviation(int[] source)
+       static double StandardDeviation(int[] source, int buffer = 1)
       {
-      double StandardDeviationValue =  Math.Sqrt(source.Average());
-        return StandardDeviationValue;
+      if (source == null)
+      { throw new ArgumentNullException("source"); }
+ 
+      var data = source.ToList();
+      var average = data.Average();
+      var differences = data.Select(u => Math.Pow(average - u, 2.0)).ToList();
+      var StandardDeviationValue =  Math.Sqrt(differences.Sum() / (differences.Count() - buffer));
+      return StandardDeviationValue;
       }
 
 
