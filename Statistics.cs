@@ -17,8 +17,12 @@ namespace as224wq_examination_1
         Console.WriteLine("Average: " + Math.Round(averageValue, 1));
         double medianValue = Median(source);
         Console.WriteLine("Median: " + Math.Round(medianValue, 1));
-        int[] modeValues = Mode(source);
-        Console.WriteLine("Typvärdet: " + modeValues );
+       /*  int[] modeValues = Mode(source);
+        Console.WriteLine("Typvärdet: " + modeValues ); */
+        int rangeValue = Range(source);
+        Console.WriteLine("Range: " + rangeValue);
+        double StandardDeviationValue = StandardDeviation(source);
+        Console.WriteLine ("Standardavvikelse: " + StandardDeviationValue);
 
 
         return null;
@@ -49,10 +53,25 @@ namespace as224wq_examination_1
             return (medianValue[medianValue.Length / 2 - 1] + medianValue[medianValue.Length / 2]) / 2.0;
         return medianValue[medianValue.Length / 2];       
       } 
-
+/* 
       static int[] Mode(int[] source)
       {
-       return  new int[2];
+
+       return  ;
+      } */
+
+      static int Range(int[] source)
+      {
+        int rangeValue =  (source.Max()) - (source.Min());
+        return rangeValue;
       }
+
+       static double StandardDeviation(int[] source)
+      {
+      double StandardDeviationValue =  Math.Sqrt(source.Average());
+        return StandardDeviationValue;
+      }
+
+
     }
 }
