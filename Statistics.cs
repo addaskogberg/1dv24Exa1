@@ -11,16 +11,31 @@ namespace as224wq_examination_1
       {
         int maxValue = Maximum(source);
         Console.WriteLine("Maximum: " + maxValue);
+
         int minValue = Minimum(source);
         Console.WriteLine("Minimum: " + minValue);
+
         double averageValue = Mean(source);
-        Console.WriteLine("Average: " + Math.Round(averageValue, 1));
+        Console.WriteLine("Medelvärde: " + Math.Round(averageValue, 1));
+
         double medianValue = Median(source);
         Console.WriteLine("Median: " + Math.Round(medianValue, 1));
-       /*  int[] modeValues = Mode(source);
-        Console.WriteLine("Typvärdet: " + modeValues ); */
+
+        int[] mode = Mode(source);
+        string resultString = "";
+        for(int i=0; i< mode.Length; i ++)
+        {
+          if(mode[i] != 0)
+          {
+            resultString += mode[i]+",";
+          }
+        }
+        resultString = resultString.Remove(resultString.Length -1);
+        Console.WriteLine("Typvärdet: " + resultString); 
+
         int rangeValue = Range(source);
-        Console.WriteLine("Range: " + rangeValue);
+        Console.WriteLine("Variationsbredd: " + rangeValue);
+
         double StandardDeviationValue = StandardDeviation(source);
         Console.WriteLine ("Standardavvikelse: " + Math.Round(StandardDeviationValue, 1));
 
@@ -53,12 +68,39 @@ namespace as224wq_examination_1
             return (medianValue[medianValue.Length / 2 - 1] + medianValue[medianValue.Length / 2]) / 2.0;
         return medianValue[medianValue.Length / 2];       
       } 
-/* 
+ 
       static int[] Mode(int[] source)
       {
+        Dictionary<int, int> mode = new Dictionary<int, int> { };
+        int tempNo;
+        for(int i = 0; i <source.Length; i++)
+        {
+          if(!mode.TryGetValue(source[i], out tempNo))
+          {
+            mode.Add(source[i], 1);
+          }
+          else
+          {
+            mode[source[i]]++;
+          }
+        }
 
-       return  ;
-      } */
+        int maxInDictionary = mode.Values.Max();
+        Console.WriteLine("maxInDictionary: " + maxInDictionary);
+        int[] modeArray= new int[source.Length];
+        int counter = 0;
+
+        foreach (KeyValuePair<int, int> entry in mode)
+        {
+          if(entry.Value == maxInDictionary)
+          {
+            modeArray[counter] = entry.Key;
+            // Console.WriteLine(entry.Key + " " + entry.Value);
+            counter++;
+          }
+        }
+        return modeArray;
+      }
 
       static int Range(int[] source)
       {
