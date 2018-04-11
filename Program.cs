@@ -17,11 +17,8 @@ namespace as224wq_examination_1
             {
                 source [i] = data[i];
             }
+           // source = null;  används för att testa exceptions
 
-            if (source == null)
-            throw new ArgumentNullException("source");
-            if (source.Length == 0)
-            throw new InvalidOperationException();
             Statistics.DescriptiveStatistic(source);      
        }
    }

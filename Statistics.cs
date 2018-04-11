@@ -44,26 +44,25 @@ namespace as224wq_examination_1
       }
       static int Maximum(int[] source)
       {
+        checkForErrors(source);
         int maxValue = source.Max();
         return maxValue;
       }
       static int Minimum(int[] source)
       {
+        checkForErrors(source);
         int minValue = source.Min();
         return minValue;
       }
       static double Mean(int[] source)
       {
+        checkForErrors(source);
         double averageValue = source.Average();
         return averageValue;
       } 
        static double Median(int[] source)
       {
-     /*    if (source == null)
-         throw new ArgumentNullException("source");
-        var medianValue = source.OrderBy(n => n).ToArray();
-        if (medianValue.Length == 0)
-            throw new InvalidOperationException(); */
+        checkForErrors(source);
             var medianValue = source.OrderBy(n => n).ToArray();
         if (medianValue.Length % 2 == 0)
             return (medianValue[medianValue.Length / 2 - 1] + medianValue[medianValue.Length / 2]) / 2.0;
@@ -72,6 +71,7 @@ namespace as224wq_examination_1
  
       static int[] Mode(int[] source)
       {
+        checkForErrors(source);
         Dictionary<int, int> mode = new Dictionary<int, int> { };
         int tempNo;
         for(int i = 0; i <source.Length; i++)
@@ -96,7 +96,6 @@ namespace as224wq_examination_1
           if(entry.Value == maxInDictionary)
           {
             modeArray[counter] = entry.Key;
-            // Console.WriteLine(entry.Key + " " + entry.Value);
             counter++;
           }
         }
@@ -105,22 +104,31 @@ namespace as224wq_examination_1
 
       static int Range(int[] source)
       {
+        checkForErrors(source);
         int rangeValue =  (source.Max()) - (source.Min());
         return rangeValue;
       }
 
        static double StandardDeviation(int[] source, int buffer = 1)
-      {
-      if (source == null)
-      { throw new ArgumentNullException("source"); }
- 
-      var data = source.ToList();
-      var average = data.Average();
-      var differences = data.Select(u => Math.Pow(average - u, 2.0)).ToList();
-      var StandardDeviationValue =  Math.Sqrt(differences.Sum() / (differences.Count() - buffer));
-      return StandardDeviationValue;
+      { 
+        checkForErrors(source);
+        var data = source.ToList();
+        var average = data.Average();
+        var differences = data.Select(u => Math.Pow(average - u, 2.0)).ToList();
+        var StandardDeviationValue =  Math.Sqrt(differences.Sum() / (differences.Count() - buffer));
+        return StandardDeviationValue;
       }
 
-
+      static void checkForErrors(int[] source)
+      {
+        if (source.Length == 0)
+        { 
+          throw new InvalidOperationException();
+        }
+        if (source == null)
+        { 
+          throw new ArgumentNullException("source"); 
+        }
+      }
     }
 }
