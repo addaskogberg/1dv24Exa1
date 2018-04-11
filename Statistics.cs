@@ -27,7 +27,7 @@ namespace as224wq_examination_1
         {
           if(mode[i] != 0)
           {
-            resultString += mode[i]+",";
+            resultString += mode[i]+", ";
           }
         }
         resultString = resultString.Remove(resultString.Length -1);
@@ -59,11 +59,12 @@ namespace as224wq_examination_1
       } 
        static double Median(int[] source)
       {
-        if (source == null)
+     /*    if (source == null)
          throw new ArgumentNullException("source");
         var medianValue = source.OrderBy(n => n).ToArray();
         if (medianValue.Length == 0)
-            throw new InvalidOperationException();
+            throw new InvalidOperationException(); */
+            var medianValue = source.OrderBy(n => n).ToArray();
         if (medianValue.Length % 2 == 0)
             return (medianValue[medianValue.Length / 2 - 1] + medianValue[medianValue.Length / 2]) / 2.0;
         return medianValue[medianValue.Length / 2];       
