@@ -21,7 +21,7 @@ namespace as224wq_examination_1
 
            // source = null;  används för att testa exceptions
 
-            //kallar på metoden DescriptivStatistics som skriver ut värdena
+            //kallar på metoden DescriptivStatistics och skriver ut värdena
             Console.WriteLine(Statistics.DescriptiveStatistic(source));      
        }
    }
