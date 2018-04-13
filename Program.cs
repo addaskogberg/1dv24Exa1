@@ -8,7 +8,8 @@ namespace as224wq_examination_1
     class Program
     {
         static void Main(string[] args) 
-        {               
+        {    
+            //Json filen görs om till en int array           
             var json = File.ReadAllText(@"data.json");
             var data = JsonConvert.DeserializeObject<List<int>>(json);  
             int[] source = new int[data.Count];
@@ -17,8 +18,10 @@ namespace as224wq_examination_1
             {
                 source [i] = data[i];
             }
+
            // source = null;  används för att testa exceptions
 
+            //kallar på metoden DescriptivStatistics som skriver ut värdena
             Statistics.DescriptiveStatistic(source);      
        }
    }
