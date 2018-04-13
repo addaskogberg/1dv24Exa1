@@ -10,7 +10,7 @@ namespace as224wq_examination_1
         static void Main(string[] args) 
         {    
             //Json filen görs om till en int array           
-            var json = File.ReadAllText(@"data.json");
+            var json = File.ReadAllText(@"data.json");// 
             var data = JsonConvert.DeserializeObject<List<int>>(json);  
             int[] source = new int[data.Count];
 
