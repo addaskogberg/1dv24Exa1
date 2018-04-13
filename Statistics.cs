@@ -10,17 +10,18 @@ namespace as224wq_examination_1
       public static dynamic DescriptiveStatistic(int[] source)
       {
         int maxValue = Maximum(source);
-        Console.WriteLine("Maximum: " + maxValue);
-
+        String returnstring = "";
+        returnstring += "Maximum: " + maxValue + "\n";
+       
         int minValue = Minimum(source);
-        Console.WriteLine("Minimum: " + minValue);
-
+        returnstring += "Minimum: " + minValue + "\n";
+      
         double averageValue = Mean(source);
-        Console.WriteLine("Medelvärde: " + Math.Round(averageValue, 1));
-
+        returnstring += "Medelvärde: " + Math.Round(averageValue, 1) + "\n";
+     
         double medianValue = Median(source);
-        Console.WriteLine("Median: " + Math.Round(medianValue, 1));
-
+        returnstring += "Median: " + Math.Round(medianValue, 1) + "\n";
+    
         int[] mode = Mode(source);
         string resultString = "";
         for(int i=0; i< mode.Length; i ++)
@@ -31,17 +32,18 @@ namespace as224wq_examination_1
           }
         }
         resultString = resultString.Remove(resultString.Length -1);
-        Console.WriteLine("Typvärdet: " + resultString); 
+        returnstring += "Typvärdet: " + resultString + "\n";
 
         int rangeValue = Range(source);
-        Console.WriteLine("Variationsbredd: " + rangeValue);
-
+        returnstring += "Variationsbredd: " + rangeValue + "\n";
+       
         double StandardDeviationValue = StandardDeviation(source);
-        Console.WriteLine ("Standardavvikelse: " + Math.Round(StandardDeviationValue, 1));
-
-
-        return null;
+        returnstring += "Standardavvikelse: " + Math.Round(StandardDeviationValue, 1) + "\n";
+    
+        return returnstring;
       }
+
+      
       // använder linq för att hitta maxvärdet i arrayen
       static int Maximum(int[] source)
       {
