@@ -32,6 +32,7 @@ namespace as224wq_examination_1
           }
         }
         resultString = resultString.Remove(resultString.Length -1);
+        resultString = resultString.Remove(resultString.Length -1);
         returnstring += "Typvärdet: " + resultString + "\n";
 
         int rangeValue = Range(source);
@@ -43,7 +44,7 @@ namespace as224wq_examination_1
         return returnstring;
       }
 
-      
+
       // använder linq för att hitta maxvärdet i arrayen
       static int Maximum(int[] source)
       {
